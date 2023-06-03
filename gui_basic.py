@@ -6,6 +6,7 @@ root.title("reem")  # title 변경
 #root.geometry("400x600")  # 크기 설정.가로x세로. 따옴표 안에 작성할 것.
 root.geometry("400x600+400+0") # "가로x세로+x좌표+y좌표"
 
-root.resizable(True, False) # x(너비. 가로), y(높이. 세로). False의 경우 사이즈 조정 불가. 파이썬에선 true, false 대문자로 시작하게 적기.
+root.resizable(True, False) # x(너비. 가로), y(높이. 세로). False의 경우 사이즈 조정 불가.
+#파이썬에선 True, False 대문자로 시작하게 작성.
 
 root.mainloop() # 윈도우가 종료될 때까지 창을 실행시킴. -> 실행흐름 맨 마지막에 작성.
