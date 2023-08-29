@@ -193,3 +193,52 @@ Windows 탐색기 (File Explorer)를 열고, 주소창에 C:\Users\shini\AppData
 npm라는 폴더가 있는지 확인하세요.
 만약 npm 폴더가 없다면, 해당 위치에서 직접 npm 폴더를 만들어주세요.
 폴더를 만든 후에 다시 npx create-react-app myreactapp 명령을 실행해 보세요.
+
+
+
+
+
+react앱 생성이 잘 되었다면
+
+React 앱 디렉토리로 이동:cmd
+cd myreactapp
+
+React 앱 실행:cmd
+npm start
+이 명령을 실행하면 기본 웹 브라우저가 자동으로 열릴 것이며 http://localhost:3000/ 주소로 React 앱이 실행됩니다. 이 상태에서는 아직 Flask API와 연동되지 않은 초기 React 화면만 볼 수 있습니다.
+
+API 서버에 요청 보내기 위한 패키지 설치
+React에서 HTTP 요청을 보내기 위해 axios라는 라이브러리를 사용할 것입니다. 이 라이브러리를 설치해야 합니다.:cmd
+npm install axios
+
+React에서 Flask API 호출하기
+React 앱의 src 폴더 아래에 있는 App.js 파일을 편집하겠습니다. 이 파일은 React 앱의 메인 컴포넌트입니다.
+App.js 파일을 열어서 다음과 같이 코드를 수정합니다: javascript
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/greet', {
+        name: name
+      });
+      setMessage(response.data.message);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  return (
+    <div className="App">
+      <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your name" />
+      <button onClick={handleSubmit}>Greet Me!</button>
+      <p>{message}</p>
+    </div>
+  );
+}
+
+export default App;
