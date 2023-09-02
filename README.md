@@ -14,6 +14,9 @@ macOS/Linux: source myflaskenv/bin/activate
 가상 환경이 활성화된 상태에서 다음 명령을 실행하여 Flask 및 필요한 라이브러리를 설치합니다: cmd에서 실행.
 pip install flask
 
+
+4. Flask 애플리케이션 작성
+3.1. 새로운 파이썬 파일을 만듭니다. 예를 들어, app.py라는 이름으로 파일을 생성합니다.
 파일들의 각 위치는 아래와 같아야함.
 C:\Users\shininjae
 |-- myflaskenv\
@@ -21,9 +24,6 @@ C:\Users\shininjae
 |   |-- lib\
 |   |-- Scripts\
 |-- app.py
-
-4. Flask 애플리케이션 작성
-3.1. 새로운 파이썬 파일을 만듭니다. 예를 들어, app.py라는 이름으로 파일을 생성합니다.
 
 3.2. 위에서 제시한 Flask 코드를 app.py에 복사 및 붙여넣기 합니다: python에서 실행.
 from flask import Flask, jsonify, request
