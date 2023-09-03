@@ -16,11 +16,11 @@
 <h2>시스템 구조도</h2>
 
 <h3>Branch</h3>
-├─Main
-├─FE
-│  ├─혜림
-│  ├─원정
-├─BE
-│  ├─server
-│  ├─database
-├─AI 
+├─Main<br>
+├─front-end<br>
+│  ├─혜림<br>
+│  ├─원정<br>
+├─back-end<br>
+│  ├─server<br>
+│  ├─database<br>
+├─yolo-with-python <br>
